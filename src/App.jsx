@@ -5,7 +5,6 @@ import Login from "./pages/login";
 import Home from "./pages/main/home";
 import Profile from "./pages/main/profile";
 import Register from "./pages/register";
-import SkillsList from "./pages/skills";
 import EditProfile from "./pages/main/edit-profile";
 import Main from "./pages/main";
 import WorkerProfile from "./pages/main/profile-worker";
