@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { LogoSvg, previous } from "../../assets/icons";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import api from '../../config/api/index.js'
+import { useDispatch } from "react-redux";
+import { register } from "../../config/reducer/authSlice.js";
 
 function Register() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -16,23 +18,15 @@ function Register() {
   });
   const handleRegister = (e) => {
     e.preventDefault();
-    api.post('/recruiters/register',{
-        email: form.email,
-        password: form.password,
-        name: form.name,
-        company: form.company,
-        position: form.position,
-        phone: form.phone
-      })
-      .then((res) => {
-        alert("Anda Berhasil Daftar, Silahkan Login : )");
-        navigate("/login");
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
-  };
-
+    dispatch(register(form))
+    .unwrap()
+    .then((res)=>{
+    navigate("/login");
+    })
+    .catch((err)=>{
+      console.log(err.response);
+    })
+  }
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -41,15 +35,13 @@ function Register() {
   };
   return (
     <section className="bg-abu-abu">
-      <div className="w-full flex p-5 justify-around h-full mx-auto max-[768px]:flex-col max-[768px]:gap-y-4">
-      <Link to="/">
-      <img className="w-8 h-8" src={previous} />
-      </Link>
+      <div className="w-full flex p-5 justify-around h-screen mx-auto max-[768px]:flex-col max-[768px]:gap-y-4">
         <div className="w-1/2 h-auto flex flex-col justify-start bg-login bg-cover p-10 box-border max-lg:hidden">
           <div className="h-1/4">
-            <Link to="/">
-              <img src={LogoSvg} alt="logo" />
-            </Link>
+            <Link to="/" className="font-semibold flex items-center gap-x-3 bg-white bg-opacity-25 w-32 p-2 rounded-md">
+              <img className="w-8 h-8" src={previous} />
+              <p>Kembali</p>
+          </Link>
           </div>
           <div className="ml-10 mr-24">
             <p className="text-white text-5xl font-bold leading-snug">
@@ -58,6 +50,7 @@ function Register() {
           </div>
         </div>
         <div className="flex flex-col justify-center w-1/2 h-full pl-10 max-lg:pl-0 max-lg:w-full">
+        
           <div className="flex flex-col justify-between mb-1">
             <p className=" text-xl font-semibold">Halo, Pewpeople</p>
             <p className=" text-lg">

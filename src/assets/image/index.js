@@ -16,6 +16,7 @@ import profile2 from "./profile2.png";
 import profile3 from "./profile3.png";
 import profile4 from "./profile4.png";
 import profile5 from "./profile5.png";
+import tokopedia from './tokopedia.png';
 
 export {
   ellipse1,
@@ -36,4 +37,5 @@ export {
   profile3,
   profile4,
   profile5,
+  tokopedia
 };

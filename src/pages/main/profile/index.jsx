@@ -24,28 +24,69 @@ import {
 } from "../../../assets/image";
 import Button from "../../../components/button";
 import api from "../../../config/api/index.js";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { Loading } from "../../../components/loading/index.jsx";
+import { useDispatch } from "react-redux";
+import { getSkillsbyId } from "../../../config/reducer/skillsSlice.js";
+import { getPortofoliobyId } from "../../../config/reducer/portoSlice.js";
+import { getExpbyId } from "../../../config/reducer/experienceSlice.js";
+import { getWorkerProfilebyId } from "../../../config/reducer/workersSlice.js";
 
 const Profile = () => {
-  const {profileId} = useParams();
+  const [loading, setLoading] = useState(false);
+  const [menu, setMenu] = useState("portofolio");
+  const { profileId } = useParams();
   const [name, setName] = useState("");
   const [skills, setSkills] = useState([]);
-
+  const [getPorto, setGetPorto] = useState([]);
+  const [getExperience, setGetExperience] = useState([]);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   useEffect(() => {
-    Promise.all([
-      api.get(`https://fwm17-be-peword.vercel.app/v1/workers/${profileId}`),
-      api.get(`https://fwm17-be-peword.vercel.app/v1/skills/${profileId}`),
-    ])
-      .then((responses) => {
-        const nameResponse = responses[0];
-        const skillResponse = responses[1];
-        setName(nameResponse.data.data);
-        setSkills(skillResponse.data.data);
+    setLoading(true);
+    dispatch(getWorkerProfilebyId(profileId))
+      .unwrap()
+      .then((res) => {
+        setLoading(false);
+        setName(res);
       })
       .catch((errors) => {
         console.error("Ada kesalahan saat mengambil data", errors);
       });
-  }, []);
+    dispatch(getSkillsbyId(profileId))
+      .unwrap()
+      .then((res) => {
+        setLoading(false);
+        setSkills(res);
+      })
+      .catch((errors) => {
+        console.error("Ada kesalahan saat mengambil data", errors);
+      });
+      dispatch(getPortofoliobyId(profileId))
+      .unwrap()
+      .then((res) => {
+        setLoading(false);
+        setGetPorto(res);
+      })
+      .catch((errors) => {
+        console.error("Ada kesalahan saat mengambil data", errors);
+      });
+      dispatch(getExpbyId(profileId))
+      .unwrap()
+      .then((res) => {
+        setLoading(false);
+        setGetExperience(res);
+      })
+      .catch((errors) => {
+        console.error("Ada kesalahan saat mengambil data", errors);
+      });
+  }, [dispatch]);
+  const toggleMenu = (menu) => {
+    setMenu(menu === "menu" ? null : menu);
+  };
+  const handleNavigate = (id) => {
+    navigate(`/main/hire/${id}`);
+  };
   return (
     <div>
       <section className="bg-abu-abu">
@@ -54,6 +95,7 @@ const Profile = () => {
           <div className="bg-white w-1/4 h-auto rounded-md max-[768px]:w-4/5">
             <div className="p-6 box-border flex flex-col gap-y-3">
               <img className="w-36 h-36 self-center mb-5" src={profile_porto} />
+              {loading && <Loading />}
               <p className="text-xl font-bold uppercase">{name.name}</p>
               <p className="text-xs">{name.job_desk}</p>
               <div className="flex flex-row gap-y-1 items-center">
@@ -64,84 +106,91 @@ const Profile = () => {
               <p className="text-abu-gelap text-xs my-1 leading-5">
                 {name.description}
               </p>
-              <Button className="w-full bg-ungu-muda hover:bg-violet-800 text-white">
+              <Button
+                onClick={() => handleNavigate(name.id)}
+                className="w-full bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4"
+              >
                 Hire
               </Button>
+              <Link to="/main/home">
+                <Button className="w-full bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4">
+                  Kembali
+                </Button>
+              </Link>
             </div>
             <div className="flex flex-col p-6 justify-between gap-y-3">
               <p>Skill</p>
+              {loading && <Loading />}
               <div className="flex flex-wrap gap-y-3 gap-x-2 pl-0 px-8">
                 {skills.map((skill) => (
                   <Button
                     key={skill.id}
-                    className="w-20 text-xs bg-orange-gelap text-white"
+                    className="text-xs bg-orange-gelap text-white py-2 px-3 rounded-md"
                   >
                     {skill.skill_name}
                   </Button>
                 ))}
-
-                {/* <Button className="w-24 text-xs bg-orange-gelap">
-                  Laravel
-                </Button>
-                <Button className="w-16 text-xs bg-orange-gelap">Golang</Button>
-                <Button className="w-24 text-xs bg-orange-gelap">
-                  Javascript
-                </Button>
-                <Button className="w-16 text-xs bg-orange-gelap">HTML</Button>
-                <Button className="w-12 text-xs bg-orange-gelap">C++</Button>
-                <Button className="w-16 text-xs bg-orange-gelap">Swift</Button> */}
               </div>
             </div>
             <div className="flex gap-x-3 p-6">
-              <div className="flex flex-col gap-y-3">
-                <img className="w-4 h-4" src={email} />
-                <img className="w-4 h-4" src={instagram} />
-                <img className="w-4 h-4" src={github} />
-                <img className="w-4 h-4" src={gitlab} />
-              </div>
-              <div className="flex flex-col gap-y-3">
-                <p className="text-xs m-0 text-abu-gelap">
-                  Louistommo@gmail.com
-                </p>
-                <p className="text-xs m-0 text-abu-gelap">@Louist91</p>
-                <p className="text-xs m-0 text-abu-gelap">@Louistommo</p>
-                <p className="text-xs m-0 text-abu-gelap">@Louistommo91</p>
-              </div>
+              <img className="w-4 h-4" src={email} />
+              <p className="text-xs m-0 text-abu-gelap">{name.email}</p>
             </div>
           </div>
           <div className="bg-white h-1/2 w-1/2 rounded-md px-4 py-5 box-border max-[768px]:w-4/5">
-            <div className="flex flex-row gap-5 h-10 mb-4 max-[768px]:ml-14">
-              <p className="border-solid border-b-4 border-b-ungu-muda">
+            <div className="flex h-10 mb-8 justify-start gap-5 max-[768px]:justify-evenly">
+              <Button
+                className={` ${
+                  menu === "portofolio"
+                    ? "border-solid border-b-4 border-b-ungu-muda"
+                    : ""
+                }`}
+                onClick={() => toggleMenu("portofolio")}
+              >
                 Portofolio
-              </p>
-              <p>Pengalaman</p>
+              </Button>
+              <Button
+                className={` ${
+                  menu === "pengalaman"
+                    ? "border-solid border-b-4 border-b-ungu-muda"
+                    : ""
+                }`}
+                onClick={() => toggleMenu("pengalaman")}
+              >
+                Pengalaman
+              </Button>
             </div>
-            <div className="flex justify-between flex-wrap gap-y-4 gap-x-4 max-[768px]:justify-center max-[768px]:gap-x-9">
-              <div className="text-xs text-center font-semibold">
-                <img src={porto1} />
-                <p>Remainder App</p>
+            {menu === "portofolio" && (
+              <div className="flex justify-around flex-wrap gap-y-4 gap-x-4 max-[768px]:justify-center max-[768px]:gap-x-9">
+                {getPorto.map((item) => (
+                  <div
+                    key={item.id}
+                    className="text-xs text-center font-semibold"
+                  >
+                    <img className="w-56 h-36" src={item.image} />
+                    <p>{item.application_name}</p>
+                  </div>
+                ))}
               </div>
-              <div className="text-xs text-center font-semibold">
-                <img src={porto2} />
-                <p>Socal Media App</p>
+            )}
+            {menu === "pengalaman" && (
+              <div className="flex flex-col gap-y-8">
+                {getExperience.map((item) => (
+                  <div
+                    key={item.id}
+                    className=" border-b-4 border-ungu-muda pb-3"
+                  >
+                    <p className="font-semibold">{item.position}</p>
+                    <p className="text-gray-700">{item.company}</p>
+                    <p className="text-gray-500">
+                      {item.work_month}
+                      {item.work_year}
+                    </p>
+                    <p className="text-gray-700 mt-2">{item.description}</p>
+                  </div>
+                ))}
               </div>
-              <div className="text-xs text-center font-semibold">
-                <img src={porto3} />
-                <p>Project Management Web</p>
-              </div>
-              <div className="text-xs text-center font-semibold">
-                <img src={porto4} />
-                <p>Remainder App</p>
-              </div>
-              <div className="text-xs text-center font-semibold">
-                <img src={porto5} />
-                <p>Social Media App</p>
-              </div>
-              <div className="text-xs text-center font-semibold">
-                <img src={porto6} />
-                <p>Project Management Web</p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

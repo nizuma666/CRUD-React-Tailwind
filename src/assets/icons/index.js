@@ -14,7 +14,11 @@ import search from "./search.png";
 import checklistPurple from "./tick1.png";
 import checklistYellow from "./tick13.png";
 import bgUpload from "./uploadfile.png";
-import logout from "./logout.png"
+import logout from "./logout.png";
+import iconprofile from "./icon-profile.png";
+import silang from "./x.png";
+import linkedin from "./linkedin.png";
+import trash from "./trash.png"
 
 export {
   bell,
@@ -33,5 +37,9 @@ export {
   checklistPurple,
   checklistYellow,
   bgUpload,
-  logout
+  logout,
+  iconprofile,
+  silang,
+  linkedin,
+  trash
 };

@@ -3,57 +3,30 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 import { LogoSvg, previous } from "../../assets/icons";
 // import { Link } from "react-router-dom";
 import api from "../../config/api/index.js";
+import { useDispatch } from "react-redux";
+import { login } from "../../config/reducer/authSlice.js";
 
 const Login = () => {
   const navigate = useNavigate();
-  // const [email, setEmail] = useState('')
-  // const [password, setPassword] = useState('')
+  const dispatch = useDispatch();
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-  // const handleCheckRole = (e) => {
-  //   e.preventDefault();
-  //   api.get("/auth/check-role")
-  //   .then((res)=>{
-  //     console.log(res.data.data);
-  //     if(res.data.data === "recruiter"){
-  //       handleLogin()
-  //     }else{
-  //       alert("anda bukan recruiter")
-  //       navigate("/")
-  //     }
-  //   })
-  // }
-
   const handleLogin = (e) => {
     e.preventDefault();
-    api
-      .post("auth/login", {
-        email: form.email,
-        password: form.password,
-      })
+    dispatch(login(form))
+      .unwrap()
       .then((res) => {
-        const { token, refreshToken } = res.data.data;
-        localStorage.setItem("token", token);
-        localStorage.setItem("resfreshToken", refreshToken);
-        if(res.data.data.role === "recruiter"){
+        if (res.data.role === "recruiter") {
           navigate("/main/home");
-        }else{
-          navigate("/main/worker")
+        } else {
+          navigate("/main/worker");
         }
-        
       })
       .catch((err) => {
         console.log(err.response);
       });
-    // instance({
-    //   method: "POST",
-    //   url: "/auth/login",
-    //   data: {
-    //     email: form.email,
-    //     password: form.password,
-    //   },
   };
   const handleChange = (e) => {
     setForm({
@@ -65,14 +38,9 @@ const Login = () => {
   return (
     <section className="bg-abu-abu">
       <div className="w-full flex p-5 justify-around h-screen mx-auto">
-      <Link to="/">
-      <img className="w-8 h-8" src={previous} />
-      </Link>
         <div className="w-1/2 h-full flex flex-col justify-start bg-login bg-cover p-10 box-border max-lg:hidden">
           <div className="h-1/4">
-            <Link to="/">
-              <img src={LogoSvg} alt="logo" />
-            </Link>
+            <img src={LogoSvg} alt="logo" />
           </div>
           <div className="ml-10 mr-24">
             <p className="text-white text-4xl font-bold leading-snug">
@@ -81,6 +49,11 @@ const Login = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center gap-10 w-1/2 h-full pl-10 max-lg:pl-0 max-lg:w-full">
+          <Link to="/" className="font-semibold flex items-center gap-x-3">
+            <img className="w-8 h-8" src={previous} />
+            <p>Kembali</p>
+          </Link>
+
           <div className="flex flex-col justify-between">
             <p className=" text-3xl font-semibold">Halo, Pewpeople</p>
             <p className=" text-lg">

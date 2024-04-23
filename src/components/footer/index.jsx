@@ -11,14 +11,13 @@ function Footer() {
           </div>
           <div>
             <p className="text-white text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-              euismod ipsum et dui rhoncus auctor.
+              Penyedia Jasa Talent Terbaik Sepanjang Masa
             </p>
           </div>
 
           <div className="mt-12 border-t-2 border-white pt-5 flex justify-between">
             <p className="text-white text-lg">
-              2020 Pewworld. All right reserved
+              2020 Peworld. All right reserved
             </p>
             <div className="flex gap-5">
               <p className="text-white text-lg">Telepon</p>

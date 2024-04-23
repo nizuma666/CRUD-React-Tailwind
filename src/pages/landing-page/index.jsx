@@ -6,6 +6,7 @@ import {
   pic1,
   pic2,
   pic3,
+  tokopedia,
 } from "../../assets/image";
 import {
   checklistPurple,
@@ -17,6 +18,7 @@ import {
 } from "../../assets/icons";
 import { Link } from "react-router-dom";
 import Button from "../../components/button";
+import Footer from "../../components/footer";
 
 const Landing = () => {
   return (
@@ -30,12 +32,12 @@ const Landing = () => {
         </p>
         <div className="flex flex-col gap-5">
           <Link to="/login">
-            <Button className="bg-white hover:bg-ungu-muda text-ungu-muda font-semibold hover:text-white w-full">
+            <Button className="bg-white hover:bg-ungu-muda text-ungu-muda font-semibold hover:text-white w-full rounded-md py-3">
               Masuk
             </Button>
           </Link>
           <Link to="/register">
-            <Button className="bg-white hover:bg-ungu-muda text-ungu-muda font-semibold hover:text-white w-full">
+            <Button className="bg-white hover:bg-ungu-muda text-ungu-muda font-semibold hover:text-white w-full rounded-md py-3">
               Daftar
             </Button>
           </Link>
@@ -49,7 +51,7 @@ const Landing = () => {
             <Link to="/login">
               <button
                 type="button"
-                className="bg-transparent hover:bg-violet-700 text-violet-700 hover:text-white border border-violet-700 hover:border-transparent rounded py-2 px-4"
+                className="bg-transparent hover:bg-ungu-muda text-ungu-muda hover:text-white border border-ungu-muda hover:border-transparent rounded py-2 px-4"
               >
                 Masuk
               </button>
@@ -57,7 +59,7 @@ const Landing = () => {
             <Link to="/register">
               <button
                 type="button"
-                className="bg-violet-700 hover:bg-violet-800 hover:text-white text-white py-2 px-4 border-transparent rounded"
+                className="bg-ungu-muda hover:bg-white hover:text-ungu-muda hover:border hover:border-ungu-muda text-white py-2 px-4 border-transparent rounded"
               >
                 Daftar
               </button>
@@ -72,14 +74,16 @@ const Landing = () => {
               Talenta terbaik negri untuk perubahan revolusi 4.0
             </p>
             <p className="text-lg w-3/4">
-              Tingkatkan skill dan unggulkan persainganmu bersama peworld
+              Cari talenta terbaik dan unggulkan persainganmu bersama peworld
             </p>
+            <Link to="/login">
             <button
               type="button"
-              className="w-52 bg-violet-800 hover:bg-violet-950 text-white py-4 px-4 rounded"
+              className="w-52 bg-ungu-muda hover:bg-white hover:text-ungu-muda  hover:border hover:border-ungu-muda text-white py-4 px-4 rounded"
             >
               Mulai Dari Sekarang
             </button>
+            </Link>
           </div>
           <div className="container w-1/2">
             <img src={pic1} alt="" />
@@ -110,16 +114,16 @@ const Landing = () => {
               </div>
               <div className="flex flex-col gap-8">
                 <div>
-                  <p>Lorem ipsum dolor sit amet.</p>
+                  <p>Kualitas SKill terjamin</p>
                 </div>
                 <div>
-                  <p>Lorem ipsum dolor sit amet.</p>
+                  <p>Siap bekerja kapanpun</p>
                 </div>
                 <div>
-                  <p>Lorem ipsum dolor sit amet.</p>
+                  <p>WFH dan WFO selalu siap</p>
                 </div>
                 <div>
-                  <p>Lorem ipsum dolor sit amet.</p>
+                  <p>Softskill yang menunjang kinerja</p>
                 </div>
               </div>
             </div>
@@ -129,8 +133,8 @@ const Landing = () => {
           <div className="container w-1/2 flex flex-col justify-start px-10 py-10 gap-8">
             <p className="text-4xl font-semibold leading-snug">Skill Talent</p>
             <p className="w-3/5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-              euismod ipsum et dui rhoncus auctor.
+              Peworld memiliki banyak sekali talent dengan berbagai skill
+              programming yang dikuasai
             </p>
             <div className="flex gap-8">
               <div className="flex flex-col gap-8">
@@ -196,112 +200,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <article className="bg-gray-100 max-[768px]:hidden">
-        <div className="container mx-auto px-10 py-20 relative">
-          <div className="pb-10">
-            <p className="font-bold text-4xl text-center">
-              Their opinion about peworld
-            </p>
-          </div>
-          <div className="absolute right-60 top-96">
-            <img className="w-14 h-14" src={next} alt="" />
-          </div>
-          <div className="absolute left-60 top-96">
-            <img className="w-14 h-14" src={previous} alt="" />
-          </div>
-          <div className="flex justify-center gap-5">
-            <div className="w-80 h-auto bg-white p-10">
-              <div className="flex flex-col gap-2 items-center">
-                <img
-                  className="border-8 border-kuning-muda rounded-full"
-                  src={ellipse1}
-                  alt=""
-                />
-                <p className="text-3xl font-semibold">Harry Styles</p>
-                <p className="text-abu-abu">Web Developer</p>
-                <div className="p-4">
-                  <p className="text-dongker-muda text-center ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                    euismod ipsum et dui rhoncus auctor.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="w-80 h-auto bg-white p-10">
-              <div className="flex flex-col gap-2 items-center">
-                <img
-                  className="border-8 border-kuning-muda rounded-full"
-                  src={ellipse2}
-                  alt=""
-                />
-                <p className="text-3xl font-semibold">Niall Horan</p>
-                <p className="text-abu-abu">Web Developer</p>
-                <div className="p-4">
-                  <p className="text-dongker-muda text-center ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                    euismod ipsum et dui rhoncus auctor.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="w-80 h-auto bg-white p-10">
-              <div className="flex flex-col gap-2 items-center">
-                <img
-                  className="border-8 border-kuning-muda rounded-full"
-                  src={ellipse3}
-                  alt=""
-                />
-                <p className="text-3xl font-semibold">Louis Tomlinson</p>
-                <p className="text-abu-abu">Web Developer</p>
-                <div className="p-4">
-                  <p className="text-dongker-muda text-center ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                    euismod ipsum et dui rhoncus auctor.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-white mx-auto w-full p-44">
-          <div className="bg-ungu-muda mx-auto w-4/5 h-56 rounded-tl-3xl rounded-br-3xl box-border p-20">
-            <div className="flex justify-between items-center">
-              <p className="text-white text-4xl">Lorem ipsum dolor sit amet</p>
-              <Link to="/login">
-                <button
-                  type="button"
-                  className="w-52 bg-white text-ungu-muda py-4 px-4 rounded"
-                >
-                  Mulai Dari Sekarang
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </article>
-      <footer className="bg-ungu-muda max-[768px]:hidden">
-        <div className="container p-16 flex flex-col mx-auto gap-7">
-          <div>
-            <img className="w-44 h-14" src={LogoSvg} alt="footer-item-logo" />
-          </div>
-          <div>
-            <p className="text-white text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-              euismod ipsum et dui rhoncus auctor.
-            </p>
-          </div>
-
-          <div className="mt-12 border-t-2 border-white pt-5 flex justify-between">
-            <p className="text-white text-lg">
-              2020 Pewworld. All right reserved
-            </p>
-            <div className="flex gap-5">
-              <p className="text-white text-lg">Telepon</p>
-              <p className="text-white text-lg">Email</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </>
   );
 };

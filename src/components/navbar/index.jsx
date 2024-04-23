@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import {
   bell,
@@ -9,9 +9,11 @@ import {
   PinMap,
   LogoSvg,
   logout,
+  iconprofile,
 } from "../../assets/icons";
 import { profile1, profile2 } from "../../assets/image";
 import handleLogout from "../../config/logout/index.js";
+import api from "../../config/api/index.js";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -26,6 +28,18 @@ function Navbar() {
   const CloseDropDown = () => {
     setIsOpen(false);
   };
+  const [openProfile, setOpenProfile] = useState(false);
+  useEffect(()=>{
+    api.get('/auth/check-role')
+    .then((res)=>{
+      if(res.data.data.data.role === 'recruiter'){
+        setOpenProfile(!openProfile)
+      }
+    })
+    .catch((err)=>{
+      console.log(err.response);
+    })
+  },[])
   return (
     <div>
       <nav className="h-24 flex justify-between bg-white items-center py-0 px-5 box-border mx-auto">
@@ -51,22 +65,25 @@ function Navbar() {
                 <ul className="py-1">
                   <li onClick={CloseDropDown}>
                     <button
-                      className="w-full flex items-center font-semibold px-4 py-2 text-gray-800 hover:bg-gray-100 text-left"
+                      className="w-full flex items-center px-4 py-2 text-gray-800 hover:bg-gray-100 text-left"
                       onClick={logoutClick}
                     >
                     <img src={logout} />
                       Logout
                     </button>
                   </li>
-                  {/* <li onClick={CloseDropDown}>
+                  {openProfile && (
+                  <li onClick={CloseDropDown}>
                     <NavLink
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                      to="/main/profile"
+                      className="flex items-center px-4 py-2 text-gray-800 hover:bg-gray-100"
+                      to="/main/recruiter"
                     >
+                    <img src={iconprofile} />
                       Profil
                     </NavLink>
                     </li>
-                    <li onClick={CloseDropDown}>
+                  )}
+                    {/* <li onClick={CloseDropDown}>
                     <NavLink
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 w-auto"
                       to="/main/editprofile"

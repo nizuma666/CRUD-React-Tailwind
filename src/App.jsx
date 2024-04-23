@@ -5,9 +5,13 @@ import Login from "./pages/login";
 import Home from "./pages/main/home";
 import Profile from "./pages/main/profile";
 import Register from "./pages/register";
-import EditProfile from "./pages/main/edit-profile";
+import EditProfileWorker from "./pages/main/edit-profile-worker";
 import Main from "./pages/main";
 import WorkerProfile from "./pages/main/profile-worker";
+import RecruiterProfile from "./pages/main/profile-recruiter";
+import EditProfileRecruiter from "./pages/main/edit-profile-recruiter";
+import Hire from "./pages/main/hire";
+import ProtectedRoute from "./config/protected-route";
 
 const App = () => {
   return (
@@ -16,11 +20,14 @@ const App = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/main" element={<Main />}>
+        <Route path="/main" element={ <ProtectedRoute> <Main /> </ProtectedRoute>}>
           <Route path="home" element={<Home />} />
           <Route path="worker" element={<WorkerProfile />} />
           <Route path="profile/:profileId" element={<Profile />} />
-          <Route path="editprofile" element={<EditProfile />} />
+          <Route path="recruiter" element={<RecruiterProfile />} />
+          <Route path="editprofileworker" element={<EditProfileWorker />} />
+          <Route path="editprofilerecruiter" element={<EditProfileRecruiter />} />
+          <Route path="hire/:workerId" element={<Hire />} />
         </Route>
         {/* <Route path="/home" Component={Home} />
         <Route path="/home/profile" Component={profile} />
