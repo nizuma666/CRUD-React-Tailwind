@@ -332,7 +332,7 @@ const EditProfileWorker = () => {
                     <ConfirmModal isOpen={showConfirmModal} onClose={closeModal} isConfirm={handleDelete}>
                       {messageModal}
                     </ConfirmModal>
-                  <DeleteModal isOpen={showDeleteModal} onClose={closeModal} />
+                  <DeleteModal isOpen={showDeleteModal} onClose={closeModal} >{messageModal}</DeleteModal>
                 </div>
               </div>
             </div>
