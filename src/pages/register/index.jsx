@@ -99,16 +99,16 @@ function Register() {
           <div className="flex justify-center gap-x-2">
             <button
               onClick={() => handleActiveForm("recruiter")}
-              className={`w-1/4 h-10 border-none text-lg text-white bg-orange-gelap cursor-pointer rounded-lg text-center max-lg:text-sm ${
-                isActiveForm === "recruiter" ? "bg-orange-300" : ""
+              className={`w-1/4 h-10 border-none text-lg text-white  cursor-pointer rounded-lg text-center max-lg:text-sm ${
+                isActiveForm === "recruiter" ? "bg-orange-300" : "bg-orange-gelap"
               }`}
             >
               Rekruter
             </button>
             <button
               onClick={() => handleActiveForm("worker")}
-              className={`w-1/4 h-10 border-none text-lg text-white bg-orange-gelap cursor-pointer rounded-lg text-center max-lg:text-sm ${
-                isActiveForm === "worker" ? "bg-orange-300" : ""
+              className={`w-1/4 h-10 border-none text-lg text-white  cursor-pointer rounded-lg text-center max-lg:text-sm ${
+                isActiveForm === "worker" ? "bg-orange-300" : "bg-orange-gelap"
               }`}
             >
               Pekerja
