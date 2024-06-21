@@ -13,7 +13,8 @@ module.exports = {
         'abu-muda' : '#F2F3F4'
       },
       backgroundImage: {
-        "login": "url('./src/assets/image/bg-login.png')"
+        // "login": "url('./src/assets/image/bg-login.png')"
+        "login": "url('/src/assets/image/bg-login.png')"
       }
     },
   },

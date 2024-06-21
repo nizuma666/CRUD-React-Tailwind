@@ -16,7 +16,7 @@ import {
   next,
   previous,
 } from "../../assets/icons";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Button from "../../components/button";
 import Footer from "../../components/footer";
 
