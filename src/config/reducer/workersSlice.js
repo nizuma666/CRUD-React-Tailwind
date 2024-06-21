@@ -9,7 +9,7 @@ export const getWorkers = createAsyncThunk(
         params: {
           limit: params.limit,
           page: params.page,
-          ...(params.sort ? { sort: params.sort } : {}),
+          ...(params.sortBy ? { sortBy: params.sortBy } : {}),
           ...(params.search ? { search: params.search } : {}),
         },
       });
@@ -87,6 +87,20 @@ export const postHire = createAsyncThunk(
     }
   }
 );
+export const getHireWorker = createAsyncThunk(
+  "workers/getHireWorker",
+  async (thunkAPI) => {
+    try {
+      const response = await api.get("/hire/workers");
+      return response.data.data;
+    } catch (errors) {
+      console.error(
+        "Ada kesalahan saat menerima data",
+        thunkAPI.rejectWithValue(errors.response)
+      );
+    }
+  }
+);
 
 const workersSlice = createSlice({
   name: "workers",
@@ -159,6 +173,18 @@ const workersSlice = createSlice({
         state.hire = action.payload;
       })
       .addCase(postHire.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(getHireWorker.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getHireWorker.fulfilled, (state, action) => {
+        state.loading = false;
+        state.hire = action.payload;
+      })
+      .addCase(getHireWorker.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

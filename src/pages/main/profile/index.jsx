@@ -94,7 +94,7 @@ const Profile = () => {
         <div className="flex flex-row justify-center gap-8 relative bottom-80 max-[768px]:flex-col max-[768px]:items-center">
           <div className="bg-white w-1/4 h-auto rounded-md max-[768px]:w-4/5">
             <div className="p-6 box-border flex flex-col gap-y-3">
-              <img className="w-36 h-36 self-center mb-5" src={profile_porto} />
+              <img className="w-36 h-36 self-center mb-5 rounded-full" src={name.photo} />
               {loading && <Loading />}
               <p className="text-xl font-bold uppercase">{name.name}</p>
               <p className="text-xs">{name.job_desk}</p>
@@ -162,12 +162,13 @@ const Profile = () => {
             </div>
             {menu === "portofolio" && (
               <div className="flex justify-around flex-wrap gap-y-4 gap-x-4 max-[768px]:justify-center max-[768px]:gap-x-9">
+              {loading && <Loading />}
                 {getPorto.map((item) => (
                   <div
                     key={item.id}
-                    className="text-xs text-center font-semibold"
+                    className="text-xs text-center font-semibold w-56 h-36"
                   >
-                    <img className="w-56 h-36" src={item.image} />
+                    <img className="w-52 h-32" src={item.image} />
                     <p>{item.application_name}</p>
                   </div>
                 ))}
@@ -175,6 +176,7 @@ const Profile = () => {
             )}
             {menu === "pengalaman" && (
               <div className="flex flex-col gap-y-8">
+              {getExperience.length === 0 && <p className="text-gray-700 font-semibold text-center">Belum ada Pengalaman</p>}
                 {getExperience.map((item) => (
                   <div
                     key={item.id}

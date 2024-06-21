@@ -12,6 +12,8 @@ import RecruiterProfile from "./pages/main/profile-recruiter";
 import EditProfileRecruiter from "./pages/main/edit-profile-recruiter";
 import Hire from "./pages/main/hire";
 import ProtectedRoute from "./config/protected-route";
+import Chat from "./pages/main/chat";
+
 
 const App = () => {
   return (
@@ -28,6 +30,7 @@ const App = () => {
           <Route path="editprofileworker" element={<EditProfileWorker />} />
           <Route path="editprofilerecruiter" element={<EditProfileRecruiter />} />
           <Route path="hire/:workerId" element={<Hire />} />
+          <Route path="chat" element={<Chat />} />
         </Route>
         {/* <Route path="/home" Component={Home} />
         <Route path="/home/profile" Component={profile} />

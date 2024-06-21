@@ -8,7 +8,7 @@ import { Link, useParams } from "react-router-dom";
 import Input from "../../../components/input";
 import SuccessModal from "../../../components/modal/success-modal";
 import { useDispatch } from "react-redux";
-import { getWorkerProfilebyId } from "../../../config/reducer/workersSlice";
+import { getWorkerProfilebyId, postHire } from "../../../config/reducer/workersSlice";
 import { getSkillsbyId } from "../../../config/reducer/skillsSlice";
 
 const Hire = () => {
@@ -162,7 +162,7 @@ const Hire = () => {
                 name="desciption"
                 value={addHire.desciption}
                 onChange={handleChangeHire}
-                className="rounded outline-none border-solid border-2 w-full h-56 indent-4 text-sm pt-2 resize-none"
+                className="rounded outline-none border-solid border-2 w-full h-56 text-sm p-2 resize-none"
                 placeholder="Tuliskan deskripsi singkat"
               />
             </div>

@@ -16,8 +16,8 @@ export const login = createAsyncThunk(
   }
 );
 
-export const register = createAsyncThunk(
-    "auth/register",
+export const registerRecruiter = createAsyncThunk(
+    "auth/registerRecruiter",
     async(data, {rejectWithValue}) => {
         try{
           const response = await api.post('/recruiters/register',{
@@ -33,6 +33,22 @@ export const register = createAsyncThunk(
             return rejectWithValue(error.response.message)
         }
     }
+)
+export const registerWorker = createAsyncThunk(
+  "auth/registerWorker",
+  async(data, {rejectWithValue}) => {
+      try{
+        const response = await api.post('/workers/register',{
+              email: data.email,
+              password: data.password,
+              name: data.name,
+              phone: data.phone
+            })
+            return response.data
+      }catch (error) {
+          return rejectWithValue(error.response.message)
+      }
+  }
 )
 
 const authSlice = createSlice({
@@ -60,17 +76,31 @@ const authSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      .addCase(register.pending, (state)=>{
+      .addCase(registerRecruiter.pending, (state)=>{
         state.loading = true;
         state.error = null;
       })
-      .addCase(register.fulfilled, (state, action) => {
+      .addCase(registerRecruiter.fulfilled, (state, action) => {
         console.log(action);
         const {data} = action.payload
         state.loading = false;
         state.user = data
       })
-      .addCase(register.rejected, (state, action)=>{
+      .addCase(registerRecruiter.rejected, (state, action)=>{
+        state.loading= false
+        state.error = action.payload
+      })
+      .addCase(registerWorker.pending, (state)=>{
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(registerWorker.fulfilled, (state, action) => {
+        console.log(action);
+        const {data} = action.payload
+        state.loading = false;
+        state.user = data
+      })
+      .addCase(registerWorker.rejected, (state, action)=>{
         state.loading= false
         state.error = action.payload
       })

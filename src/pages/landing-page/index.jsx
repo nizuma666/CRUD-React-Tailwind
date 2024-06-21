@@ -67,7 +67,7 @@ const Landing = () => {
           </div>
         </div>
       </nav>
-      <section className="py-9 px-4 flex flex-col gap-14 max-[768px]:hidden">
+      <section className="py-9 px-4 flex flex-col gap-14 max-[768px]:hidden items-center">
         <div className="flex justify-content">
           <div className="container w-1/2 flex flex-col justify-center px-10 gap-8">
             <p className="text-5xl font-semibold leading-snug w-3/4">
@@ -200,7 +200,9 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <div className="max-[768px]:hidden">
+      <Footer />
+      </div>
     </>
   );
 };

@@ -35,6 +35,20 @@ export const editRecruiter = createAsyncThunk(
       }
     }
   );
+  export const getHireRecruiter = createAsyncThunk(
+    "workers/getHireWorker",
+    async (thunkAPI) => {
+      try {
+        const response = await api.get("/hire/recruiters");
+        return response.data.data;
+      } catch (errors) {
+        console.error(
+          "Ada kesalahan saat menerima data",
+          thunkAPI.rejectWithValue(errors.response)
+        );
+      }
+    }
+  );
 
 const recruiterSlice = createSlice({
   name: "recruiter",
@@ -42,6 +56,7 @@ const recruiterSlice = createSlice({
     loading: null,
     error: null,
     user: null,
+    hire: null,
     edit: null
   },
   reducers: {},
@@ -70,7 +85,19 @@ const recruiterSlice = createSlice({
       .addCase(editRecruiter.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      });
+      })
+      .addCase(getHireRecruiter.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getHireRecruiter.fulfilled, (state, action) => {
+        state.loading = false;
+        state.hire = action.payload;
+      })
+      .addCase(getHireRecruiter.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
   },
 });
 export default recruiterSlice.reducer;

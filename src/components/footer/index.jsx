@@ -10,18 +10,18 @@ function Footer() {
             <img className="w-44 h-14" src={LogoSvg} alt="footer-item-logo" />
           </div>
           <div>
-            <p className="text-white text-lg">
+            <p className="text-white text-lg max-lg:text-base">
               Penyedia Jasa Talent Terbaik Sepanjang Masa
             </p>
           </div>
 
-          <div className="mt-12 border-t-2 border-white pt-5 flex justify-between">
-            <p className="text-white text-lg">
+          <div className="mt-12 border-t-2 border-white pt-5 flex justify-between flex-wrap max-lg:mt-0">
+            <p className="text-white text-lg max-lg:text-base">
               2020 Peworld. All right reserved
             </p>
             <div className="flex gap-5">
-              <p className="text-white text-lg">Telepon</p>
-              <p className="text-white text-lg">Email</p>
+              <p className="text-white text-lg max-lg:text-base">Telepon</p>
+              <p className="text-white text-lg max-lg:text-base">Email</p>
             </div>
           </div>
         </div>

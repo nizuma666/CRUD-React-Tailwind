@@ -48,9 +48,9 @@ function Navbar() {
           <a href="#">
             <img className="ml-5 w-9 h-9" src={bell} alt="bell" />
           </a>
-          <a href="#">
+          <NavLink to="/main/chat">
             <img className="ml-5 w-9 h-9" src={email} alt="nav-item-message" />
-          </a>
+            </NavLink>
           <div className="relative">
             <img
               onClick={toggleDropDown}
@@ -83,14 +83,6 @@ function Navbar() {
                     </NavLink>
                     </li>
                   )}
-                    {/* <li onClick={CloseDropDown}>
-                    <NavLink
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100 w-auto"
-                      to="/main/editprofile"
-                    >
-                      Edit Profile
-                    </NavLink>
-                  </li> */}
                 </ul>
               </div>
             )}
