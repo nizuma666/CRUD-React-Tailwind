@@ -94,9 +94,9 @@ const Profile = () => {
         <div className="flex flex-row justify-center gap-8 relative bottom-80 max-[768px]:flex-col max-[768px]:items-center">
           <div className="bg-white w-1/4 h-auto rounded-md max-[768px]:w-4/5">
             <div className="p-6 box-border flex flex-col gap-y-3">
-              <img className="w-36 h-36 self-center mb-5 rounded-full" src={name.photo} />
+              <img className="w-36 h-36 self-center mb-5 rounded-full" src={profile_porto} />
               {loading && <Loading />}
-              <p className="text-xl font-bold uppercase">{name.name}</p>
+              <p className="text-xl font-semibold capitalize">{name.name}</p>
               <p className="text-xs">{name.job_desk}</p>
               <div className="flex flex-row gap-y-1 items-center">
                 <img className="w-4 h-4" src={PinMap} />
@@ -112,7 +112,7 @@ const Profile = () => {
               >
                 Hire
               </Button>
-              <Link to="/main/home">
+              <Link to="/main/caripekerja">
                 <Button className="w-full bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4">
                   Kembali
                 </Button>

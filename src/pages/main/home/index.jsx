@@ -1,33 +1,30 @@
 import React, { useEffect, useState } from "react";
-import {
-  bell,
-  LogoPng,
-  email,
-  search,
-  line,
-  PinMap,
-  LogoSvg,
-} from "../../../assets/icons";
-import { profile1, profile2 } from "../../../assets/image";
+import { search, PinMap } from "../../../assets/icons";
+import { profile2 } from "../../../assets/image";
 import Button from "../../../components/button";
-import api from "../../../config/api/index.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Loading } from "../../../components/loading/index.jsx";
 import { useDispatch } from "react-redux";
 import { getWorkers } from "../../../config/reducer/workersSlice.js";
+import AlertModal from "../../../components/modal/alert-modal/index.jsx";
 
 const Home = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const [workers, setWorkers] = useState([]);
-  const [sortBy, setSortBy] = useState("DESC");
+  const [sortBy, setSortBy] = useState("");
   const [params, setParams] = useState({
     limit: 5,
     search: "",
     page: 1,
     sortBy: "",
+    sort: "",
   });
+  const [showAlertModal, setAlertShowModal] = useState(false);
+  const [messageModal, setModalMessage] = useState("");
+  const [headerMessageModal, setHeaderModalMessage] = useState("");
+  const token = localStorage.getItem("token");
   const handlePrev = () => {
     setParams({
       ...params,
@@ -56,25 +53,47 @@ const Home = () => {
         // console.log(res);
       });
   }, [params]);
-  const handleSort = (sort) => {
+  const handleSortBy = (sort) => {
     setParams({
       ...params,
       sortBy: sort,
+      sort: "name",
     });
   };
+
   const handleSortChange = (event) => {
-    setSortBy(event.target.value);
-    handleSort(event.target.value); // Panggil fungsi handleSort sesuai dengan urutan yang dipilih
+    handleSortBy(event.target.value); // Panggil fungsi handleSort sesuai dengan urutan yang dipilih
   };
   const handleNavigate = (id) => {
-    navigate(`/main/profile/${id}`);
+    if (!token) {
+      setAlertShowModal(true);
+      setModalMessage("Anda belum login!");
+      setHeaderModalMessage("Oops!!!");
+    } else {
+      navigate(`/main/profile/${id}`);
+    }
+  };
+  const closeModal = () => {
+    setAlertShowModal(false);
   };
   return (
     <div className="w-full bg-abu-abu pb-10 max-lg:pt-5">
+      <AlertModal
+        isOpen={showAlertModal}
+        onClose={closeModal}
+        header={headerMessageModal}
+      >
+        {messageModal}
+      </AlertModal>
       <div className="h-24 bg-ungu-muda text-white text-2xl font-bold pt-7 px-7 box-border max-lg:hidden">
         Top Job
       </div>
       <section>
+        <div className="my-5 text-ungu-muda mx-auto w-4/5">
+          <p className="font-medium">
+            <Link to="/">Kembali ke Home</Link>
+          </p>
+        </div>
         <div className="flex justify-around items-center p-3 w-4/5 h-16 rounded mx-auto my-5 bg-white">
           <input
             onChange={handleSearch}
@@ -84,19 +103,20 @@ const Home = () => {
             placeholder="Cari nama peworld"
           />
           <img className="h-7 ml-2 max-lg:ml-0 max-lg:h-5" src={search} />
-          <div>
-            <select
-              value={sortBy}
-              onChange={handleSortChange}
-              className="bg-white text-ungu-muda max-lg:text-sm"
-            >
-              <option value="ASC">ASC</option>
-              <option value="DESC">DESC</option>
+          <div className="text-ungu-muda max-lg:text-sm">
+            <label>Filter: </label>
+            <select onChange={handleSortChange} className="bg-white">
+              <option value="ASC">A-Z</option>
+              <option value="DESC">Z-A</option>
             </select>
           </div>
         </div>
-        {loading && <div className="flex justify-center"><Loading /></div>}
-        {workers.map((item) => (
+        {loading ? (
+          <div className="flex justify-center">
+            <Loading />
+          </div>
+        ) : (
+          workers.map((item) => (
             <div
               key={item.id}
               onClick={() => handleNavigate(item.id)}
@@ -129,7 +149,7 @@ const Home = () => {
                   {item.skills.slice(0, 3).map((skill, index) => (
                     <button
                       key={index}
-                      className="text-xs bg-orange-gelap text-white p-2 rounded-md h-8"
+                      className="text-xs bg-orange-gelap text-white p-2 max-lg:p-1 rounded-md max-lg:text-[9px]"
                     >
                       {skill}
                     </button>
@@ -149,7 +169,8 @@ const Home = () => {
                 Lihat Profil
               </Button>
             </div>
-        ))}
+          ))
+        )}
         <div className="flex justify-center gap-4 rounded mt-10">
           <button
             onClick={handlePrev}

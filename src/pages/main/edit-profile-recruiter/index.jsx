@@ -90,7 +90,7 @@ const EditProfileRecruiter = () => {
                 <p className="text-abu-gelap text-xs">{profile.city}</p>
               </div>
             </div>
-            <Link to="/main/home">
+            <Link to="/main/caripekerja">
               <Button className="w-full bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4">
                 Kembali
               </Button>

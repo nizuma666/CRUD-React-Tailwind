@@ -74,7 +74,7 @@ const RecruiterProfile = () => {
                 <Button onClick={handleNavigate} className="w-60 bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4">
                   Edit Profile
                 </Button>
-                <Link to="/main/home">
+                <Link to="/">
               <Button className="w-60 bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4">
                 Kembali
               </Button>

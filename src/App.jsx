@@ -22,15 +22,15 @@ const App = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/main" element={ <ProtectedRoute> <Main /> </ProtectedRoute>}>
-          <Route path="home" element={<Home />} />
-          <Route path="worker" element={<WorkerProfile />} />
-          <Route path="profile/:profileId" element={<Profile />} />
-          <Route path="recruiter" element={<RecruiterProfile />} />
-          <Route path="editprofileworker" element={<EditProfileWorker />} />
-          <Route path="editprofilerecruiter" element={<EditProfileRecruiter />} />
-          <Route path="hire/:workerId" element={<Hire />} />
-          <Route path="chat" element={<Chat />} />
+        <Route path="/main" element={<Main />}>
+          <Route path="caripekerja" element={<Home />} />
+          <Route path="worker" element={<ProtectedRoute><WorkerProfile /></ProtectedRoute>} />
+          <Route path="profile/:profileId" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="recruiter" element={<ProtectedRoute><RecruiterProfile /></ProtectedRoute>} />
+          <Route path="editprofileworker" element={<ProtectedRoute><EditProfileWorker /></ProtectedRoute>} />
+          <Route path="editprofilerecruiter" element={<ProtectedRoute><EditProfileRecruiter /></ProtectedRoute>} />
+          <Route path="hire/:workerId" element={<ProtectedRoute><Hire /></ProtectedRoute>} />
+          <Route path="chat" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
         </Route>
         {/* <Route path="/home" Component={Home} />
         <Route path="/home/profile" Component={profile} />

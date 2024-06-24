@@ -3,12 +3,14 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 import { LogoSvg, previous } from "../../assets/icons";
 // import { Link } from "react-router-dom";
 import api from "../../config/api/index.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../config/reducer/authSlice.js";
+import { Loading } from "../../components/loading/index.jsx";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const {loading} = useSelector((state)=>state.authSlice)
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -18,11 +20,7 @@ const Login = () => {
     dispatch(login(form))
       .unwrap()
       .then((res) => {
-        if (res.data.role === "recruiter") {
-          navigate("/main/home");
-        } else {
-          navigate("/main/worker");
-        }
+        navigate("/");
       })
       .catch((err) => {
         console.log(err.response);
@@ -38,14 +36,16 @@ const Login = () => {
   return (
     <section className="bg-abu-abu">
       <div className="w-full flex p-5 justify-around h-screen mx-auto">
-        <div className="w-1/2 h-full flex flex-col justify-start bg-login bg-cover p-10 box-border max-lg:hidden">
-          <div className="h-1/4">
-            <img src={LogoSvg} alt="logo" />
-          </div>
-          <div className="ml-10 mr-24">
-            <p className="text-white text-4xl font-bold leading-snug">
-              Temukan developer berbakat & terbaik di berbagai bidang keahlian
-            </p>
+        <div className="w-1/2 bg-login bg-cover p-10 box-border rounded-md max-lg:hidden">
+          <div className="flex h-full flex-col justify-between">
+            <div>
+              <img src={LogoSvg} alt="logo" />
+            </div>
+            <div className="flex-grow flex items-center">
+              <p className="text-white text-4xl font-bold leading-snug">
+                Temukan developer berbakat & terbaik di berbagai bidang keahlian
+              </p>
+            </div>
           </div>
         </div>
         <div className="flex flex-col justify-center gap-10 w-1/2 h-full pl-10 max-lg:pl-0 max-lg:w-full">
@@ -55,10 +55,10 @@ const Login = () => {
           </Link>
 
           <div className="flex flex-col justify-between">
-            <p className=" text-3xl font-semibold">Halo, Pewpeople</p>
-            <p className=" text-lg">
-              Mau ngasah skill..? Login dulu bisa kaliiii
+            <p className=" text-3xl font-semibold max-lg:text-2xl">
+              Halo, Pewpeople
             </p>
+            <p className="text-lg capitalize">login dan temui talent terbaik</p>
           </div>
           <form onSubmit={handleLogin}>
             <div className="mb-5">
@@ -86,8 +86,8 @@ const Login = () => {
                 />
               </div>
             </div>
-            <button className="w-full h-12 border-none text-lg text-white bg-orange-gelap cursor-pointer rounded-lg text-center hover:bg-orange-terang">
-              Masuk
+            <button className="w-full h-12 border-none text-lg text-white bg-orange-gelap cursor-pointer rounded-lg text-center hover:bg-orange-terang flex items-center justify-center">
+              {loading ? <Loading /> : <>Masuk</>}
             </button>
           </form>
           <div>

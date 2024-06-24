@@ -47,8 +47,8 @@ const Chat = () => {
               <img className="w-8 h-8" src={previous} />
               <p>Kembali</p>
             </Link>) : <Link
-              to="/main/home"
-              className="font-semibold flex items-center gap-x-3 mb-4"
+              to="/main/caripekerja"
+              className="font-semibold flex items-center gap-x-3 mb-4 border border-transparent w-1/2 p-2 hover:border-ungu-muda rounded-lg hover:bg-white"
             >
               <img className="w-8 h-8" src={previous} />
               <p>Kembali</p>
@@ -97,7 +97,7 @@ const Chat = () => {
               )}
             </div>
           </div>
-          <div className="w-3/5 h-1/2 max-[768px]:w-4/5 mt-12">
+          <div className="w-3/5 h-1/2 max-[768px]:w-4/5 mt-16">
             <div className="bg-white rounded-md p-6 w-full h-[542px] box-border max-[768px]:items-center">
               {chatUser ? (
                 <>

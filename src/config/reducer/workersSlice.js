@@ -10,6 +10,7 @@ export const getWorkers = createAsyncThunk(
           limit: params.limit,
           page: params.page,
           ...(params.sortBy ? { sortBy: params.sortBy } : {}),
+          ...(params.sort ? { sort: params.sort } : {}),
           ...(params.search ? { search: params.search } : {}),
         },
       });
