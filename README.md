@@ -74,4 +74,7 @@ Halaman untuk rekruter melakukan hiring pada pekerja
 ### 7. Profile Recruiter
 Halaman profil dari rekruter
 ![landing-page-desktop](public/doc-peworld/profile-recruiter.png)
+### 8. Profile Worker
+Halaman profil dari pekerja
+![landing-page-desktop](public/doc-peworld/profile-recruiter.png)
 
