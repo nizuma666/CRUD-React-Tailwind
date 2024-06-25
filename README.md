@@ -1,13 +1,15 @@
 # Peworld
-![Logo](src/assets/icons/logo-png.png)
+
+<p align="center">
+  <img src="src/assets/icons/logo-png.png" alt="Logo" />
+</p>
 
 ## Table of Content
 
 - [About The Project](#about-the-project)
 - [Usage](#usage)
 - [Installation](#installation)
-- [Penggunaan](#penggunaan)
-- [Dokumentasi](#dokumentasi)
+- [Documentation](#documentation)
 - [Visit](#visit)
 - [Additional Related Resource](#additional-related-resource)
 - [Other References](#other-references)
@@ -20,69 +22,69 @@ This website is built using [Vite + React](https://vitejs.dev/). The web design 
 
 ## Installation
 
-Langkah-langkah untuk menginstal dan mengatur proyek ini di mesin lokalmu.
+Steps to install and set up this project on your local machine.
 
-1. Clone repository:
+1. Clone the repository:
     ```bash
     git clone https://github.com/nizuma666/Peworld.git
     ```
-2. Instal dependensi:
+2. Install dependencies:
     ```bash
     npm install
     ```
-    atau
+    or
     ```bash
     yarn install
     ```
 
-## Penggunaan
+## Usage
 
-Instruksi untuk menjalankan proyek ini. Jelaskan juga parameter atau opsi yang bisa digunakan jika ada.
+Instructions to run this project. Also, explain any parameters or options if available.
 
-1. Jalankan proyek:
+1. Run the project:
     ```bash
     npm run dev
     ```
-    atau
+    or
     ```bash
     yarn dev
     ```
-2. Buka [http://localhost:3000](http://localhost:3000) di browser untuk melihat hasilnya.
+2. Open [http://localhost:3000](http://localhost:3000) in the browser to view it.
 
-## Dokumentasi
+## Documentation
 ### 1. Landing Page
-Halaman ini yang pertama kali akan dikunjungi ketika mengakses Peworld.
+This is the first page visited when accessing Peworld.
 ![landing-page-desktop](/public/doc-peworld/landing-page-before-login.png)
 ### 2. Landing Page After Login
-Navbar akan berubah ketika sudah login.
+The navbar changes after logging in.
 ![landing-page-desktop](public/doc-peworld/landing-page-after-login.png)
 ### 3. Login
-Login akan otomatis mendeteksi role sesuai dengan email dan password yang terdaftar
+Login will automatically detect the role according to the registered email and password.
 ![landing-page-desktop](public/doc-peworld/login.png)
-### 3. Register
-Ada 2 opsi untuk mendaftar yaitu sebagai *recruiter* atau *worker*
+### 4. Register
+There are 2 options to register: as a recruiter or a worker.
 ![landing-page-desktop](public/doc-peworld/register-worker.png)
-### 4. Find Worker
-Halaman ini digunakan untuk melihat informasi pekerja
+### 5. Find Worker
+This page is used to view worker information.
 ![landing-page-desktop](public/doc-peworld/find-worker-after-login.png)
-### 5. Profile Worker From a Recruiter Perspective
-Halaman profil dari pekerja yang bisa dilihat oleh rekruter
+### 6. Profile Worker From a Recruiter Perspective
+Worker profile page as seen by the recruiter.
 ![landing-page-desktop](public/doc-peworld/worker-profile-in-recuiter-accesss.png)
-### 6. Hire
-Halaman untuk rekruter melakukan hiring pada pekerja 
+### 7. Hire
+Page for recruiters to hire workers.
 ![landing-page-desktop](public/doc-peworld/send-hire.png)
-### 7. Profile Recruiter
-Halaman profil dari rekruter
+### 8. Profile Recruiter
+Recruiter profile page.
 ![landing-page-desktop](public/doc-peworld/profile-recruiter.png)
-### 8. Profile Worker
-Halaman profil dari pekerja
+### 9. Profile Worker
+Worker profile page.
 ![landing-page-desktop](public/doc-peworld/profile-worker.png)
-### 9. Chat
-Halaman untuk melihat pesan hire
+### 10. Chat
+Page to view hire messages.
 ![landing-page-desktop](public/doc-peworld/receive-hire-message-in-worker-access.png)
 
 ## Visit
-Jika anda tertarik untuk melihat langsung website, silahkan kunjungin [link ini](https://crud-react-tailwind-roan.vercel.app/). 
+If you are interested in seeing the website directly, please visit [this link](https://crud-react-tailwind-roan.vercel.app/).
 
 ## Additional Related Resource
 
@@ -90,4 +92,3 @@ Jika anda tertarik untuk melihat langsung website, silahkan kunjungin [link ini]
 - :rocket: HTML
 - :rocket: CSS
 - :rocket: Javascript
-
