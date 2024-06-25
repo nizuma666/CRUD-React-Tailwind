@@ -55,4 +55,23 @@ Halaman ini yang pertama kali akan dikunjungi ketika mengakses Peworld.
 ![landing-page-desktop](/public/doc-peworld/landing-page-before-login.png)
 ### 2. Landing Page After Login
 Navbar akan berubah ketika sudah login.
-![landing-page-desktop](/public/doc-peworld/landing-page.png)
+![landing-page-desktop](public/doc-peworld/landing-page-after-login.png)
+### 3. Login
+Login akan otomatis mendeteksi role sesuai dengan email dan password yang terdaftar
+![landing-page-desktop](public/doc-peworld/login.png)
+### 3. Register
+Ada 2 opsi untuk mendaftar yaitu sebagai *recruiter* atau *worker*
+![landing-page-desktop](public/doc-peworld/register-worker.png)
+### 4. Find Worker
+Halaman ini digunakan untuk melihat informasi pekerja
+![landing-page-desktop](public/doc-peworld/find-worker-after-login.png)
+### 5. Profile Worker From a Recruiter Perspective
+Halaman profil dari pekerja yang bisa dilihat oleh rekruter
+![landing-page-desktop](public/doc-peworld/worker-profile-in-recuiter-accesss.png)
+### 6. Hire
+Halaman untuk rekruter melakukan hiring pada pekerja 
+![landing-page-desktop](public/doc-peworld/send-hire.png)
+### 7. Profile Recruiter
+Halaman profil dari rekruter
+![landing-page-desktop](public/doc-peworld/profile-recruiter.png)
+
