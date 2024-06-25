@@ -83,6 +83,6 @@ Page to view hire messages. This page contains hire messages sent by recruiters 
 If you are interested in seeing the website directly, please visit [this link](https://crud-react-tailwind-roan.vercel.app/).
 
 ## Other References
-- :rocket: HTML
-- :rocket: CSS
-- :rocket: Javascript
+- :rocket: [HTML](https://www.duniailkom.com/tutorial-belajar-html-dan-index-artikel-html/)
+- :rocket: [CSS](https://www.duniailkom.com/tutorial-belajar-css-dan-index-artikel-css/)
+- :rocket: [Javascript](https://www.duniailkom.com/tutorial-belajar-javascript-dan-index-artikel-javascript/)
