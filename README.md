@@ -11,7 +11,6 @@
 - [Installation](#installation)
 - [Documentation](#documentation)
 - [Visit](#visit)
-- [Additional Related Resource](#additional-related-resource)
 - [Other References](#other-references)
 
 ## About The Project
@@ -82,8 +81,6 @@ Page to view hire messages. This page contains hire messages sent by recruiters 
 
 ## Visit
 If you are interested in seeing the website directly, please visit [this link](https://crud-react-tailwind-roan.vercel.app/).
-
-## Additional Related Resource
 
 ## Other References
 - :rocket: HTML
