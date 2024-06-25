@@ -158,7 +158,7 @@ const WorkerProfile = () => {
                 <p className="text-abu-gelap text-xs">{profile.domicile}</p>
               </div>
               <p className="text-abu-gelap text-xs">{profile.workplace}</p>
-              <p className="text-abu-gelap text-xs my-1 leading-5">
+              <p className="text-abu-gelap text-xs my-1 leading-5 text-justify">
                 {profile.description}
               </p>
               <Button
