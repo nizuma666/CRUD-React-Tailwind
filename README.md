@@ -8,9 +8,9 @@
 - [Installation](#installation)
 - [Penggunaan](#penggunaan)
 - [Dokumentasi](#dokumentasi)
-- [Kontribusi](#kontribusi)
-- [Lisensi](#lisensi)
-- [Kontak](#kontak)
+- [Visit](#visit)
+- [Additional Related Resource](#additional-related-resource)
+- [Other References](#other-references)
 
 ## About The Project
 Peworld is a job search website designed to help recruiters find the best candidates and for job seekers to find their dream job. Peworld allows recruiters to view detailed information about candidates' skills, portfolios, and experiences. It offers a "hire" feature, enabling recruiters to send direct messages to candidates if they are interested in their profiles. For job seekers, updating skills, portfolios, and experiences is crucial. Therefore, Peworld makes it easy for job seekers to update their profiles to attract more recruiters.
@@ -76,5 +76,18 @@ Halaman profil dari rekruter
 ![landing-page-desktop](public/doc-peworld/profile-recruiter.png)
 ### 8. Profile Worker
 Halaman profil dari pekerja
-![landing-page-desktop](public/doc-peworld/profile-recruiter.png)
+![landing-page-desktop](public/doc-peworld/profile-worker.png)
+### 9. Chat
+Halaman untuk melihat pesan hire
+![landing-page-desktop](public/doc-peworld/receive-hire-message-in-worker-access.png)
+
+## Visit
+Jika anda tertarik untuk melihat langsung website, silahkan kunjungin [link ini](https://crud-react-tailwind-roan.vercel.app/). 
+
+## Additional Related Resource
+
+## Other References
+- :rocket: HTML
+- :rocket: CSS
+- :rocket: Javascript
 
