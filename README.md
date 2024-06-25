@@ -39,9 +39,7 @@ Steps to install and set up this project on your local machine.
 
 ## Usage
 
-Instructions to run this project. Also, explain any parameters or options if available.
-
-1. Run the project:
+- Run the following command to start the project:
     ```bash
     npm run dev
     ```
@@ -49,7 +47,6 @@ Instructions to run this project. Also, explain any parameters or options if ava
     ```bash
     yarn dev
     ```
-2. Open [http://localhost:3000](http://localhost:3000) in the browser to view it.
 
 ## Documentation
 ### 1. Landing Page
@@ -65,22 +62,22 @@ Login will automatically detect the role according to the registered email and p
 There are 2 options to register: as a recruiter or a worker.
 ![landing-page-desktop](public/doc-peworld/register-worker.png)
 ### 5. Find Worker
-This page is used to view worker information.
+This page is used to view worker information. There is a search and name filter feature that can be used to help find workers.
 ![landing-page-desktop](public/doc-peworld/find-worker-after-login.png)
 ### 6. Profile Worker From a Recruiter Perspective
-Worker profile page as seen by the recruiter.
+Worker profile page as seen by the recruiter. Recruiters can see all skills, portfolios, and experiences of the worker and hire by clicking the hire button.
 ![landing-page-desktop](public/doc-peworld/worker-profile-in-recuiter-accesss.png)
 ### 7. Hire
-Page for recruiters to hire workers.
+Page for recruiters to hire workers. This page contains a form to send a hiring message to the selected worker.
 ![landing-page-desktop](public/doc-peworld/send-hire.png)
 ### 8. Profile Recruiter
-Recruiter profile page.
+Recruiter profile page. This page contains company information from the recruiter and there is an option to edit the profile.
 ![landing-page-desktop](public/doc-peworld/profile-recruiter.png)
 ### 9. Profile Worker
-Worker profile page.
+Worker profile page. This page contains information about the worker with options to edit experience, portfolio, and profile, as well as delete a portfolio or experience.
 ![landing-page-desktop](public/doc-peworld/profile-worker.png)
 ### 10. Chat
-Page to view hire messages.
+Page to view hire messages. This page contains hire messages sent by recruiters to the targeted workers.
 ![landing-page-desktop](public/doc-peworld/receive-hire-message-in-worker-access.png)
 
 ## Visit
