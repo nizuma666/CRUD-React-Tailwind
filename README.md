@@ -68,7 +68,7 @@ Steps to install and set up this project on your local machine.
 If you are interested in seeing the website directly, please visit [this link](https://crud-react-tailwind-roan.vercel.app/).
 
 ## Back-End Peworld
-Sistem back-end untuk project ini dibuat oleh [muhammad risano](https://github.com/muhammadrisano) menggunakan express-js. jika kamu ingin melihat lebih jauh tentang back-end project ini silahkan kunjungi [back-end peworld](https://github.com/nizuma666/fwm17-be-peword)
+The back-end system for this project was created by [muhammad risano](https://github.com/muhammadrisano) using express-js. If you want to see more about this back-end project, please visit [back-end peworld](https://github.com/nizuma666/fwm17-be-peword)
 
 ## Contact
 I am very open to criticism and suggestions from all of you, please contact syaifullohismail123@gmail.com email to give feedback.
