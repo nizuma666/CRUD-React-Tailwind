@@ -1,7 +1,7 @@
 # Peworld
 
 <p align="center">
-  <img src="src/assets/icons/logo-png.png" alt="Logo" />
+  <img src="src/assets/icons/logo-svg.svg" width="800" alt="Logo" />
 </p>
 
 ## Table of Content
@@ -77,7 +77,7 @@ Worker profile page. This page contains information about the worker with option
 ![landing-page-desktop](public/doc-peworld/profile-worker.png)
 ### 10. Chat
 Page to view hire messages. This page contains hire messages sent by recruiters to the targeted workers.
-![landing-page-desktop](public/doc-peworld/receive-hire-message-in-worker-access.png)
+![landing-page-desktop](public/doc-peworld/chat.png)
 
 ## Visit
 If you are interested in seeing the website directly, please visit [this link](https://crud-react-tailwind-roan.vercel.app/).
