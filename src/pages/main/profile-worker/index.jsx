@@ -6,21 +6,9 @@ import {
   search,
   line,
   PinMap,
-  LogoSvg,
-  instagram,
-  github,
-  gitlab,
   trash,
 } from "../../../assets/icons";
 import {
-  porto1,
-  porto2,
-  porto3,
-  porto4,
-  porto5,
-  porto6,
-  profile1,
-  profile2,
   profile_porto,
 } from "../../../assets/image";
 import Button from "../../../components/button";

@@ -38,18 +38,18 @@ const RecruiterProfile = () => {
   useEffect(() => {
     setLoading(true);
     dispatch(getProfileRecruiter())
-    .unwrap()
-    .then((res)=>{
-      setLoading(false)
-      setGetProfile(res)
-    })
-    .catch((err)=>{
-      console.log(err);
-    })
-  },[]);
+      .unwrap()
+      .then((res) => {
+        setLoading(false);
+        setGetProfile(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const handleNavigate = () => {
-    navigate("/main/editprofilerecruiter")
-  }
+    navigate("/main/editprofilerecruiter");
+  };
   return (
     <div>
       <section className="bg-abu-abu py-10">
@@ -58,7 +58,10 @@ const RecruiterProfile = () => {
             <div className="bg-ungu-muda h-44 rounded-t-lg"></div>
             <div className="relative bottom-20">
               <div className="items-center flex flex-col gap-y-3 mb-6 p-4">
-                <img className="w-36 h-36 mb-5 border-4 rounded-full" src={getProfile.photo} />
+                <img
+                  className="w-36 h-36 mb-5 border-4 rounded-full"
+                  src={getProfile.photo}
+                />
                 {loading && <Loading />}
                 <p className="text-xl font-bold uppercase text-center">
                   {getProfile.company}
@@ -68,17 +71,22 @@ const RecruiterProfile = () => {
                   <img className="w-4 h-4" src={PinMap} />
                   <p className="text-abu-gelap text-xs">{getProfile.city}</p>
                 </div>
-                <p className="text-abu-gelap text-xs my-1 leading-5 text-center">
-                  {getProfile.description}
-                </p>
-                <Button onClick={handleNavigate} className="w-60 bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4">
+                <div className="w-4/5 my-1">
+                  <p className="text-abu-gelap text-sm leading-5 text-center">
+                    {getProfile.description}
+                  </p>
+                </div>
+                <Button
+                  onClick={handleNavigate}
+                  className="w-60 bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4"
+                >
                   Edit Profile
                 </Button>
                 <Link to="/">
-              <Button className="w-60 bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4">
-                Kembali
-              </Button>
-            </Link>
+                  <Button className="w-60 bg-ungu-muda hover:bg-white text-white hover:text-ungu-muda hover:border hover:border-ungu-muda hover:border-transparent rounded py-2 px-4">
+                    Kembali
+                  </Button>
+                </Link>
               </div>
               <div className="flex justify-center gap-x-3 mb-4">
                 <div className="flex flex-col gap-y-3">
@@ -90,8 +98,12 @@ const RecruiterProfile = () => {
                   <p className="text-xs m-0 text-abu-gelap">
                     {getProfile.email}
                   </p>
-                  <p className="text-xs m-0 text-abu-gelap">{getProfile.instagram}</p>
-                  <p className="text-xs m-0 text-abu-gelap">{getProfile.linkedin}</p>
+                  <p className="text-xs m-0 text-abu-gelap">
+                    {getProfile.instagram}
+                  </p>
+                  <p className="text-xs m-0 text-abu-gelap">
+                    {getProfile.linkedin}
+                  </p>
                 </div>
               </div>
             </div>

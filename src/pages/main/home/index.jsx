@@ -15,7 +15,7 @@ const Home = () => {
   const [workers, setWorkers] = useState([]);
   const [sortBy, setSortBy] = useState("");
   const [params, setParams] = useState({
-    limit: 5,
+    limit: 10,
     search: "",
     page: 1,
     sortBy: "",
@@ -76,6 +76,15 @@ const Home = () => {
   const closeModal = () => {
     setAlertShowModal(false);
   };
+  const isItemComplete = (item) => {
+    return (
+      item.name &&
+      item.photo &&
+      item.job_desk &&
+      item.workplace &&
+      item.skills && item.skills.length > 0
+    );
+  };
   return (
     <div className="w-full bg-abu-abu pb-10 max-lg:pt-5">
       <AlertModal
@@ -116,16 +125,18 @@ const Home = () => {
             <Loading />
           </div>
         ) : (
-          workers.map((item) => (
+          workers.filter(isItemComplete).map((item) => (
             <div
               key={item.id}
               onClick={() => handleNavigate(item.id)}
               className="w-4/5 mx-auto flex justify-start bg-white border-solid border-b-2 border-abu-muda p-5 box-border items-center rounded"
             >
+            <div className="w-24 h-24">
               <img
-                className="w-24 h-24 max-lg:w-14 max-lg:h-14 rounded-full"
+                className="max-lg:w-14 max-lg:h-14 rounded-full w-24 h-24 object-contain"
                 src={item.photo ? item.photo : profile2}
               />
+              </div>
               <div
                 key={item.id}
                 className="flex flex-col ml-5 gap-3 max-lg:gap-0"
