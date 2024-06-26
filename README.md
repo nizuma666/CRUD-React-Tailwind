@@ -1,7 +1,7 @@
 # Peworld
 
 <p align="center">
-  <img src="src/assets/icons/logo-png.png" alt="Logo" />
+  <img src="src/assets/icons/logo-svg.svg" width="800" alt="Logo" />
 </p>
 
 ## Table of Content
