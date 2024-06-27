@@ -50,6 +50,7 @@ const Home = () => {
       .then((res) => {
         setLoading(false);
         setWorkers(res);
+        console.log(res);
         // console.log(res);
       });
   }, [params]);
@@ -76,15 +77,15 @@ const Home = () => {
   const closeModal = () => {
     setAlertShowModal(false);
   };
-  const isItemComplete = (item) => {
-    return (
-      item.name &&
-      item.photo &&
-      item.job_desk &&
-      item.workplace &&
-      item.skills && item.skills.length > 0
-    );
-  };
+  // const isItemComplete = (item) => {
+  //   return (
+  //     item.name &&
+  //     item.photo &&
+  //     item.job_desk &&
+  //     item.workplace &&
+  //     item.skills && item.skills.length > 0
+  //   );
+  // };
   return (
     <div className="w-full bg-abu-abu pb-10 max-lg:pt-5">
       <AlertModal
@@ -125,7 +126,7 @@ const Home = () => {
             <Loading />
           </div>
         ) : (
-          workers.filter(isItemComplete).map((item) => (
+          workers.map((item) => (
             <div
               key={item.id}
               onClick={() => handleNavigate(item.id)}

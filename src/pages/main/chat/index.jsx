@@ -96,10 +96,10 @@ const Chat = () => {
                         <img
                           className="rounded-full w-8 h-8 border-2 border-solid"
                           src={
-                        role === "worker"
-                          ? item.recruiter_photo || logo_company
-                          : item.worker_photo || profile1
-                      }
+                            role === "worker"
+                              ? item.recruiter_photo || logo_company
+                              : item.worker_photo || profile1
+                          }
                         />
                       </div>
                       <div>
@@ -122,29 +122,47 @@ const Chat = () => {
             <div className="bg-white rounded-md p-6 w-full h-[542px] box-border max-[768px]:items-center">
               {chatUser ? (
                 <>
-                  <div className="border-b-2 p-2 flex gap-x-3">
-                    <img
-                      className="rounded-full w-8 h-8 border-2 border-solid"
-                      src={
-                        role === "worker"
-                          ? chatUser.recruiter_photo || logo_company
-                          : chatUser.worker_photo || profile1
-                      }
-                    />
-                    <p className="font-semibold capitalize">
-                      {" "}
-                      {role === "worker"
-                        ? chatUser.recruiter_name
-                        : chatUser.worker_name}{" "}
-                    </p>
-                  </div>
-                  <div className="p-2 w-fit mt-6 flex gap-x-3 items-center border border-solid rounded-lg">
-                    {/* <img className="rounded-full w-8 h-8 border-2 border-solid" src={chatUser.recruiter_photo} /> */}
-                    <p className="text-sm">
-                      {" "}
-                      {chatUser.desciption_request_hire}{" "}
-                    </p>
-                  </div>
+                  {role === "worker" ? (
+                    <>
+                      <div className="border-b-2 p-2 flex gap-x-3">
+                        <img
+                          className="rounded-full w-8 h-8 border-2 border-solid"
+                          src={chatUser.recruiter_photo || logo_company}
+                        />
+                        <p className="font-semibold capitalize">
+                          {chatUser.recruiter_name}
+                        </p>
+                      </div>
+                      <div className="p-2 w-fit mt-6 flex gap-x-3 items-center border border-solid rounded-lg">
+                        <p className="text-sm">
+                          {chatUser.desciption_request_hire}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <div className=" h-full flex flex-col justify-between">
+                      <div className="border-b-2 p-2 flex gap-x-3">
+                        <img
+                          className="rounded-full w-8 h-8 border-2 border-solid"
+                          src={chatUser.worker_photo || profile1}
+                        />
+                        <p className="font-semibold capitalize">
+                          {chatUser.worker_name}
+                        </p>
+                      </div>
+                      <div className="flex gap-x-3 items-center">
+                        <div className="p-2 w-fit border border-solid rounded-lg ml-auto bg-gray-200">
+                          <p className="text-sm">
+                            {chatUser.desciption_request_hire}
+                          </p>
+                        </div>
+                        <img
+                          className="rounded-full w-8 h-8 border-2 border-solid"
+                          src={chatUser.recruiter_photo || logo_company}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </>
               ) : (
                 <>
