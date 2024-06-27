@@ -97,8 +97,8 @@ const Chat = () => {
                           className="rounded-full w-8 h-8 border-2 border-solid"
                           src={
                         role === "worker"
-                          ? chatUser.recruiter_photo || logo_company
-                          : chatUser.worker_photo || profile1
+                          ? item.recruiter_photo || logo_company
+                          : item.worker_photo || profile1
                       }
                         />
                       </div>
