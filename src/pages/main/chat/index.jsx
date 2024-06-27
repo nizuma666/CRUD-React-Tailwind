@@ -82,7 +82,7 @@ const Chat = () => {
                       <div>
                         <img
                           className="rounded-full w-8 h-8 border-2 border-solid"
-                          src={item.recruiter_photo}
+                          src={item.worker_photo}
                         />
                       </div>
                       <div>
