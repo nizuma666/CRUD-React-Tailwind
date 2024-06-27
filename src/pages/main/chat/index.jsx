@@ -14,6 +14,7 @@ const Chat = () => {
   const [chatUser, setChatUser] = useState(null);
   const [role, setRole] = useState("")
   const { hire, loading } = useSelector((state) => state.workersSlice);
+  const { hire: hireRecruiter, loading: loadingHireRecruiter } = useSelector((state) => state.recruiterSlice);
   useEffect(() => {
     api.get('/auth/check-role')
     .then((res)=>{
@@ -82,7 +83,7 @@ const Chat = () => {
                       <div>
                         <img
                           className="rounded-full w-8 h-8 border-2 border-solid"
-                          src={item.worker_photo}
+                          src={item.recruiter_photo}
                         />
                       </div>
                       <div>
