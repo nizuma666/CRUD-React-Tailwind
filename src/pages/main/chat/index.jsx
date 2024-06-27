@@ -95,7 +95,11 @@ const Chat = () => {
                       <div>
                         <img
                           className="rounded-full w-8 h-8 border-2 border-solid"
-                          src={item.recruiter_photo}
+                          src={
+                        role === "worker"
+                          ? chatUser.recruiter_photo || logo_company
+                          : chatUser.worker_photo || profile1
+                      }
                         />
                       </div>
                       <div>
@@ -123,8 +127,8 @@ const Chat = () => {
                       className="rounded-full w-8 h-8 border-2 border-solid"
                       src={
                         role === "worker"
-                          ? chatUser.worker_photo || profile1
-                          : chatUser.recruiter_photo || logo_company
+                          ? chatUser.recruiter_photo || logo_company
+                          : chatUser.worker_photo || profile1
                       }
                     />
                     <p className="font-semibold capitalize">
