@@ -134,7 +134,7 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 ## License
-Distributed undet MIT License. see [LICENSE](https://github.com/nizuma666/recipe-next-js/blob/master/LICENSE) for more information.
+Distributed undet MIT License. see [LICENSE](https://github.com/nizuma666/Peworld/blob/main/LICENSE.txt) for more information.
 
 ## Contact
 I am very open to criticism and suggestions from all of you, please contact syaifullohismail123@gmail.com email to give feedback.
