@@ -87,7 +87,7 @@ const Chat = () => {
                         />
                       </div>
                       <div>
-                        <p className="capitalize">{role === "worker" ? item.worker_name : item.recruiter_name}</p>
+                        <p className="capitalize">{role === "worker" ? item.recruiter_name : item.worker_name }</p>
                         <p className="capitalize text-gray-500">
                           {item.desciption_request_hire.slice(0, 15)}...
                         </p>
