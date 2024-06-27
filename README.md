@@ -9,9 +9,13 @@
 - [About The Project](#about-the-project)
 - [Usage](#usage)
 - [Installation](#installation)
+- [Project Structure](#project-structure)
 - [Documentation](#documentation)
+- [Features](#Features)
 - [Visit](#visit)
 - [Back-End Peworld](#back-end-peworld)
+- [Contributing](#contributing)
+- [Licence](#licence)
 - [Contact](#contact)
 - [Related Project](#related-project)
 
@@ -48,6 +52,43 @@ Steps to install and set up this project on your local machine.
     ```bash
     yarn dev
     ```
+## Project Structure
+```bash
+└───src
+    ├───assets
+    │   ├───icons
+    │   └───image
+    ├───components
+    │   ├───button
+    │   ├───footer
+    │   ├───input
+    │   ├───loading
+    │   ├───modal
+    │   │   ├───alert-modal
+    │   │   ├───confirm-modal
+    │   │   ├───delete-modal
+    │   │   └───success-modal
+    │   └───navbar
+    ├───config
+    │   ├───api
+    │   ├───logout
+    │   ├───protected-route
+    │   └───reducer
+    └───pages
+        ├───landing-page
+        ├───login
+        ├───main
+        │   ├───chat
+        │   ├───edit-profile-recruiter
+        │   ├───edit-profile-worker
+        │   ├───hire
+        │   ├───home
+        │   ├───profile
+        │   ├───profile-recruiter
+        │   └───profile-worker
+        ├───register
+        └───skills
+```
 
 ## Documentation
 
@@ -64,11 +105,36 @@ Steps to install and set up this project on your local machine.
 | Profile Worker                         | Worker profile page. This page contains information about the worker with options to edit experience, portfolio, and profile, as well as delete a portfolio or experience. | ![landing-page-desktop](public/doc-peworld/profile-worker.png)               |
 | Chat                                   | Page to view hire messages. This page contains hire messages sent by recruiters to the targeted workers.                 | ![landing-page-desktop](public/doc-peworld/chat.png)                         |
 
+## Features
+- Using Vite+React for project structure
+- API management with Axios
+- State management using Redux
+- Implementing Protected Routes for specific pages
+- Create, edit, and delete profiles for Workers and Recruiters
+- Hiring Workers
+- Find Workers with search and filter feature
+- Create, edit, and delete portfolios and experiences on the worker's side
+
 ## Visit
 If you are interested in seeing the website directly, please visit [this link](https://crud-react-tailwind-roan.vercel.app/).
 
 ## Back-End Peworld
 The back-end system for this project was created by [muhammad risano](https://github.com/muhammadrisano) using express-js. If you want to see more about this back-end project, please visit [back-end peworld](https://github.com/nizuma666/fwm17-be-peword)
+
+## Contributing
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/Feature`)
+3. Commit your Changes (`git commit -m 'Add some Feature'`)
+4. Push to the Branch (`git push origin feature/Feature`)
+5. Open a Pull Request
+
+## License
+Distributed undet MIT License. see [LICENSE](https://github.com/nizuma666/recipe-next-js/blob/master/LICENSE) for more information.
 
 ## Contact
 I am very open to criticism and suggestions from all of you, please contact syaifullohismail123@gmail.com email to give feedback.
