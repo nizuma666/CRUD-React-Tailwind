@@ -104,7 +104,7 @@ const Chat = () => {
                 <>
                   <div className="border-b-2 p-2 flex gap-x-3">
                   <img className="rounded-full w-8 h-8 border-2 border-solid" src={role === "worker" ? chatUser.worker_photo ? chatUser.worker.photo : profile1 : chatUser.recruiter_photo ? chatUser.recruiter_photo : logo_company} />
-                    <p className="font-semibold capitalize"> {role === "worker" ? chatUser.worker_name : chatUser.recruiter_name} </p>
+                    <p className="font-semibold capitalize"> {role === "worker" ? item.recruiter_name : item.worker_name } </p>
                   </div>
                   <div className="p-2 w-fit mt-6 flex gap-x-3 items-center border border-solid rounded-lg">
                   {/* <img className="rounded-full w-8 h-8 border-2 border-solid" src={chatUser.recruiter_photo} /> */}
