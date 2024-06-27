@@ -137,7 +137,7 @@ Don't forget to give the project a star! Thanks again!
 Distributed undet MIT License. see [LICENSE](https://github.com/nizuma666/Peworld/blob/main/LICENSE.txt) for more information.
 
 ## Contact
-I am very open to criticism and suggestions from all of you, please contact syaifullohismail123@gmail.com email to give feedback.
+I am very open to criticism and suggestions from all of you, please contact syaifullohismail123@gmail.com email or [linkedin/syaifulloh](https://www.linkedin.com/in/syaifulloh-ismail/) to give feedback.
 
 ## Related Project
 - :rocket: [HTML](https://www.duniailkom.com/tutorial-belajar-html-dan-index-artikel-html/)
