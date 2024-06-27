@@ -123,12 +123,8 @@ const Chat = () => {
                       className="rounded-full w-8 h-8 border-2 border-solid"
                       src={
                         role === "worker"
-                          ? chatUser.worker_photo
-                            ? chatUser.worker.photo
-                            : profile1
-                          : chatUser.recruiter_photo
-                          ? chatUser.recruiter_photo
-                          : logo_company
+                          ? chatUser.worker_photo || profile1
+                          : chatUser.recruiter_photo || logo_company
                       }
                     />
                     <p className="font-semibold capitalize">
