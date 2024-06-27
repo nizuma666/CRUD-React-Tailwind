@@ -101,9 +101,9 @@ Steps to install and set up this project on your local machine.
 | Find Worker                            | This page is used to view worker information. There is a search and name filter feature that can be used to help find workers. | ![landing-page-desktop](public/doc-peworld/find-worker-after-login2.png)      |
 | Profile Worker From a Recruiter Perspective | Worker profile page as seen by the recruiter. Recruiters can see all skills, portfolios, and experiences of the worker and hire by clicking the hire button. | ![landing-page-desktop](public/doc-peworld/worker-profile-in-recuiter-accesss.png) |
 | Hire                                   | Page for recruiters to hire workers. This page contains a form to send a hiring message to the selected worker.          | ![landing-page-desktop](public/doc-peworld/send-hire.png)                    |
-| Profile Recruiter                      | Recruiter profile page. This page contains company information from the recruiter and there is an option to edit the profile. | ![landing-page-desktop](public/doc-peworld/profile-recruiter2.png)            |
+| Profile Recruiter                      | Recruiter profile page. This page contains company information from the recruiter and there is an option to edit the profile. | ![landing-page-desktop](https://github.com/nizuma666/Peworld/blob/main/public/doc-peworld/profile-recruiter3.png)            |
 | Profile Worker                         | Worker profile page. This page contains information about the worker with options to edit experience, portfolio, and profile, as well as delete a portfolio or experience. | ![landing-page-desktop](public/doc-peworld/profile-worker.png)               |
-| Chat                                   | Page to view hire messages. This page contains hire messages sent by recruiters to the targeted workers.                 | ![landing-page-desktop](public/doc-peworld/chat.png)                         |
+| Chat                                   | Page to view hire messages. This page contains hire messages sent by recruiters to the targeted workers.                 | ![landing-page-desktop](https://github.com/nizuma666/Peworld/blob/main/public/doc-peworld/chat2.png)                         |
 
 ## Features
 - Using Vite+React for project structure
