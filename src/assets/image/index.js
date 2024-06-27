@@ -18,6 +18,7 @@ import profile4 from "./profile4.png";
 import profile5 from "./profile5.png";
 import tokopedia from "./tokopedia.png";
 import empty_chat from "./empty-chat.png";
+import logo_company from "./logo-company2.jpg";
 
 export {
   ellipse1,
@@ -40,4 +41,5 @@ export {
   profile5,
   tokopedia,
   empty_chat,
+  logo_company,
 };

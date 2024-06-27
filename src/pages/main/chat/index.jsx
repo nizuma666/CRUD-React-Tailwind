@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { empty_chat, profile1, profile_porto } from "../../../assets/image";
+import { empty_chat, logo_company, profile1, profile_porto } from "../../../assets/image";
 import { PinMap, previous } from "../../../assets/icons";
 import { Link } from "react-router-dom";
 import Button from "../../../components/button";
@@ -103,8 +103,8 @@ const Chat = () => {
               {chatUser ? (
                 <>
                   <div className="border-b-2 p-2 flex gap-x-3">
-                  <img className="rounded-full w-8 h-8 border-2 border-solid" src={chatUser.recruiter_photo} />
-                    <p className="font-semibold capitalize"> {chatUser.worker_name} </p>
+                  <img className="rounded-full w-8 h-8 border-2 border-solid" src={role === "worker" ? chatUser.worker_photo ? chatUser.worker.photo : profile1 : chatUser.recruiter_photo ? chatUser.recruiter_photo : logo_company} />
+                    <p className="font-semibold capitalize"> {role === "worker" ? chatUser.worker_name : chatUser.recruiter_name} </p>
                   </div>
                   <div className="p-2 w-fit mt-6 flex gap-x-3 items-center border border-solid rounded-lg">
                   {/* <img className="rounded-full w-8 h-8 border-2 border-solid" src={chatUser.recruiter_photo} /> */}
