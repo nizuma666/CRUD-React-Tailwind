@@ -117,10 +117,11 @@ Steps to install and set up this project on your local machine.
 - Create, edit, and delete portfolios and experiences on the worker's side
 
 ## Tester Account
-### Worker
+Please use the following account to try out all the features in this project
+#### Worker
 - Email: syaiful@gmail.com
 - Pass: abcd1234
-### Recruiter
+#### Recruiter
 - Email: ismail@gmail.com
 - Pass: abcd1234
 
