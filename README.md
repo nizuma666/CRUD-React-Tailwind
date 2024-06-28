@@ -12,6 +12,7 @@
 - [Project Structure](#project-structure)
 - [Documentation](#documentation)
 - [Features](#Features)
+- [Tester Account](#tester-account)
 - [Visit](#visit)
 - [Back-End Peworld](#back-end-peworld)
 - [Contributing](#contributing)
@@ -114,6 +115,14 @@ Steps to install and set up this project on your local machine.
 - Hiring Workers
 - Find Workers with search and filter feature
 - Create, edit, and delete portfolios and experiences on the worker's side
+
+## Tester Account
+### Worker
+- Email: syaiful@gmail.com
+- Pass: abcd1234
+### Recruiter
+- Email: ismail@gmail.com
+- Pass: abcd1234
 
 ## Visit
 If you are interested in seeing the website directly, please visit [this link](https://crud-react-tailwind-roan.vercel.app/).
